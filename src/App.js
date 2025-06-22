@@ -1,25 +1,50 @@
-import logo from './logo.svg';
+// // Import core React router and your pages
+// import React from 'react';
+// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+// import AddItem from './AddItem/AddItem';
+// import ViewItems from './ViewItem/ViewItems';
+// import './App.css'; // Import styles
+
+// function App() {
+//   return (
+//     <Router>
+//       <nav className="main-nav">
+//         <ul>
+//           <li><Link to="/add">Add Item</Link></li>
+//           <li><Link to="/view">View Items</Link></li>
+//         </ul>
+//       </nav>
+
+//       <Routes>
+//         <Route path="/add" element={<AddItem />} />
+//         <Route path="/view" element={<ViewItems />} />
+//       </Routes>
+//     </Router>
+//   );
+// }
+
+// export default App;
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import AddItem from './AddItem/AddItem';
+import ViewItems from './ViewItem/ViewItems';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="navbar">
+        <Link to="/">Add Item</Link>
+        <Link to="/view">View Items</Link>
+      </div>
+      <Routes>
+        <Route path="/" element={<AddItem />} />
+        <Route path="/view" element={<ViewItems />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
